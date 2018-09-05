@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "clean:ios": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build && rm -rf node_modules && yarn cache clean && yarn && rm -rf ~/Library/Developer/Xcode/DerivedData",
+    "clean:android": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf android/build && rm -rf node_modules && yarn cache clean && yarn && cd android && ./gradlew clean && cd ..",
     "test": "jest"
   },
   "dependencies": {
